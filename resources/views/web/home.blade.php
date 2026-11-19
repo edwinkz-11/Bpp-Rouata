@@ -82,7 +82,7 @@
 </section>
 
 {{-- D. POTENSI PERTANIAN --}}
-<section class="section bg-green-soft">
+<section class="section potensi-section">
     <div class="container">
         <div class="d-flex justify-content-between align-items-end mb-4 flex-wrap gap-2">
             <div>
@@ -94,17 +94,22 @@
         @if ($commodities->isEmpty())
             <x-empty icon="bi-flower3" title="Data komoditas belum diisi" text="Komoditas ditambahkan oleh petugas melalui Dashboard Admin → Potensi Pertanian." />
         @else
-            <div class="row g-4">
-                @foreach ($commodities as $c)
-                    <div class="col-6 col-md-4 col-lg-2">
-                        <a href="{{ route('commodities.index', ['kategori' => $c->category]) }}" class="commodity-mini text-decoration-none">
-                            <img src="{{ $c->image_url }}" alt="{{ $c->name }}" loading="lazy">
-                            <strong>{{ $c->name }}</strong>
-                            <small>{{ $c->category }}</small>
-                        </a>
-                    </div>
-                @endforeach
+            <div class="potensi-grid">
+            @foreach ($commodities as $c)
+                <a href="{{ route('commodities.index', ['kategori' => $c->category]) }}" class="potensi-tile">
+                    @if ($c->image)
+                        <img src="{{ $c->image_url }}" alt="{{ $c->name }}" loading="lazy">
+                    @else
+                        <i class="bi bi-flower1 potensi-icon"></i>
+                    @endif
+                    <span class="potensi-chip">{{ $c->category }}</span>
+                    <div class="potensi-info"><strong>{{ $c->name }}</strong><i class="bi bi-arrow-right-circle"></i></div>
+                </a>
+            @endforeach
             </div>
+            @if ($commodities->contains(fn ($c) => $c->image))
+                <p class="small text-muted mt-3 mb-0"><i class="bi bi-info-circle me-1"></i>Sebagian foto adalah foto ilustrasi (Wikimedia Commons) dan akan diganti foto lapangan Routa.</p>
+            @endif
         @endif
     </div>
 </section>

@@ -184,3 +184,37 @@ a:hover { color: var(--g-dark); }
 .org-area { font-size: .75rem; color: #6b7062; margin-top: .15rem; }
 .route-table th { white-space: nowrap; vertical-align: top; }
 @media (max-width: 575px) { .org-node { width: 150px; } }
+
+/* >> potensi */
+.potensi-section { background: radial-gradient(circle at 10% 15%, #d6f5e1 0, transparent 42%), radial-gradient(circle at 92% 85%, #fdf3cf 0, transparent 40%), #f3fbf5; }
+.potensi-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); grid-auto-rows: 170px; gap: 1rem; grid-auto-flow: dense; }
+.potensi-tile { position: relative; display: block; overflow: hidden; border-radius: 28px 28px 28px 8px; background: linear-gradient(135deg, #bbf7d0, #4ade80); box-shadow: 0 8px 20px rgba(20, 83, 45, .12); color: #fff; transition: transform .3s, box-shadow .3s; }
+.potensi-tile:nth-child(even) { border-radius: 8px 28px 28px 28px; }
+.potensi-tile:nth-child(5n+1) { grid-column: span 2; grid-row: span 2; }
+.potensi-tile:nth-child(5n+4) { grid-row: span 2; }
+.potensi-tile:hover { transform: translateY(-4px) rotate(-.4deg); box-shadow: 0 14px 28px rgba(20, 83, 45, .22); color: #fff; }
+.potensi-tile img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
+.potensi-tile:hover img { transform: scale(1.08); }
+.potensi-tile::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(8, 45, 22, .82) 0, rgba(8, 45, 22, .15) 55%, transparent 100%); }
+.potensi-icon { position: absolute; top: 42%; left: 50%; transform: translate(-50%, -50%); font-size: 3rem; color: rgba(255, 255, 255, .75); z-index: 1; }
+.potensi-chip { position: absolute; top: .8rem; left: .8rem; z-index: 2; background: rgba(255, 255, 255, .92); color: #14532d; font-size: .7rem; font-weight: 600; padding: .2rem .65rem; border-radius: 999px; }
+.potensi-info { position: absolute; left: 1rem; right: 1rem; bottom: .9rem; z-index: 2; display: flex; justify-content: space-between; align-items: center; gap: .5rem; }
+.potensi-info strong { font-size: 1.05rem; text-shadow: 0 1px 6px rgba(0, 0, 0, .4); }
+.potensi-info i { font-size: 1.3rem; opacity: .85; transition: transform .25s; }
+.potensi-tile:hover .potensi-info i { transform: translateX(4px); }
+@media (max-width: 575px) {
+    .potensi-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 150px; }
+    .potensi-tile:nth-child(5n+1) { grid-column: span 2; grid-row: span 1; }
+    .potensi-tile:nth-child(5n+4) { grid-row: span 1; }
+}
+/* << potensi */
+
+/* >> kontak */
+.contact-card { padding: 1.8rem; position: sticky; top: 100px; }
+.contact-list { list-style: none; padding: 0; margin: 0 0 1.2rem; }
+.contact-list li { display: flex; gap: .9rem; align-items: center; padding: .7rem 0; border-bottom: 1px dashed #e5ebd7; font-size: 1.02rem; }
+.contact-list li:last-child { border-bottom: 0; }
+.contact-list .ico { width: 42px; height: 42px; border-radius: 50%; background: var(--g-light); color: var(--g); display: grid; place-items: center; font-size: 1.15rem; flex: none; }
+.contact-map { border-radius: 14px; overflow: hidden; border: 1px solid #e5ebd7; margin-bottom: 1rem; }
+.contact-map iframe { display: block; width: 100%; height: 260px; border: 0; }
+/* << kontak */
