@@ -1,0 +1,34 @@
+# Jalankan:  docker compose up --build
+# Website: http://localhost:8000    Admin: http://localhost:8000/admin/login
+# Ubah ADMIN_EMAIL / ADMIN_PASSWORD di bawah sebelum run pertama.
+services:
+  db:
+    image: mysql:8.0
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: bpp_pertanian_routa
+      MYSQL_USER: bpp
+      MYSQL_PASSWORD: bpp_secret
+      MYSQL_ROOT_PASSWORD: root_secret
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    volumes:
+      - dbdata:/var/lib/mysql
+
+  app:
+    build: ./docker
+    depends_on:
+      - db
+    ports:
+      - "8000:8000"
+    environment:
+      APP_URL: http://localhost:8000
+      DB_PASSWORD: bpp_secret
+      ADMIN_EMAIL: admin@bpp-routa.test
+      ADMIN_PASSWORD: GantiSandiIni123
+    volumes:
+      - appdata:/var/www
+      - ./:/kode:ro
+
+volumes:
+  dbdata:
+  appdata:

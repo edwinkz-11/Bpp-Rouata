@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1390" font-family="Poppins, Arial, sans-serif">
+<defs><pattern id="hill" width="14" height="14" patternUnits="userSpaceOnUse"><path d="M0 11 Q3.5 5 7 11 T14 11" fill="none" stroke="#c9d6ae" stroke-width="1"/></pattern><pattern id="sea" width="26" height="12" patternUnits="userSpaceOnUse"><path d="M0 6 Q6.5 0 13 6 T26 6" fill="none" stroke="#c4dfeb" stroke-width="1"/></pattern></defs>
+<rect width="1200" height="1390" fill="#d9ecf5"/><rect width="1200" height="1390" fill="url(#sea)"/>
+<polygon points="0,54 0,246 120,306 150,474 210,684 300,894 420,1044 480,1134 570,1182 720,1206 900,1254 1200,1254 1200,1044 1128,924 1092,744 1020,564 930,384 840,204 780,54" fill="#f3f0dd" stroke="#b9b48f" stroke-width="2"/>
+<ellipse cx="570" cy="594" rx="170" ry="120" fill="#cfe3b6" opacity=".55"/><ellipse cx="450" cy="744" rx="150" ry="100" fill="#cfe3b6" opacity=".45"/>
+<rect x="0" y="84" width="1200" height="1306" fill="url(#hill)" opacity=".5" clip-path="url(#none)"/>
+<polygon points="348,234 450,216 552,282 540,366 468,390 390,378 336,306" fill="#9fd0e6" stroke="#6fa9c4" stroke-width="2"/>
+<polygon points="300,114 360,150 348,186 288,150" fill="#9fd0e6" stroke="#6fa9c4" stroke-width="2"/>
+<text x="444" y="294" font-size="14" font-style="italic" text-anchor="middle" fill="#3f7794">Danau Towuti</text>
+<text x="240" y="114" font-size="12" font-style="italic" text-anchor="end" fill="#3f7794">D. Matano</text>
+<text x="90" y="804" font-size="18" font-style="italic" fill="#6fa0b8" transform="rotate(-62 90 804)">Teluk Bone</text>
+<text x="1050" y="744" font-size="18" font-style="italic" fill="#6fa0b8" transform="rotate(-62 1050 744)">Laut Banda</text>
+<text x="60" y="126" font-size="13" font-weight="700" fill="#9a9578">SULAWESI SELATAN (Luwu Timur)</text>
+<text x="552" y="114" font-size="13" font-weight="700" fill="#9a9578">SULAWESI TENGAH (Morowali)</text>
+<text x="660" y="1146" font-size="13" font-weight="700" fill="#9a9578">SULAWESI TENGGARA</text>
+<text x="390" y="786" font-size="12" font-style="italic" fill="#6f8f50">hutan lindung / pegunungan</text>
+<path d="M708 846 L630 654 L528 504 L492 444" stroke="#8a8f80" stroke-width="3" fill="none" stroke-dasharray="2 8" stroke-linecap="round"/>
+<text x="582" y="642" font-size="11" text-anchor="end" fill="#6b7062" paint-order="stroke" stroke="#e4efd0" stroke-width="3">rencana jalan Latoma-Routa</text>
+<path d="M1026 1056 L900 1026 L750 978 L780 846 L792 744 L750 546" stroke="#fff" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1026 1056 L900 1026 L750 978 L780 846 L792 744 L750 546" stroke="#d62828" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M750 546 L630 486 L540 456 L492 444" stroke="#fff" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M750 546 L630 486 L540 456 L492 444" stroke="#d62828" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="16 10"/>
+<path d="M750 978 L600 1086 L468 1110 L360 984 L240 774 L180 594 L150 444 L180 258 L270 234 L408 234" stroke="#fff" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M750 978 L600 1086 L468 1110 L360 984 L240 774 L180 594 L150 444 L180 258 L270 234 L408 234" stroke="#d62828" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M408 234 L450 390" stroke="#1d6fa5" stroke-width="6" fill="none" stroke-dasharray="3 9" stroke-linecap="round"/>
+<path d="M450 390 L468 414 L492 444" stroke="#fff" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M450 390 L468 414 L492 444" stroke="#d62828" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="16 10"/>
+<rect x="857" y="1005" width="62" height="22" rx="11" fill="#fff" stroke="#d62828" stroke-width="1.5"/><text x="888" y="1021" font-size="11.5" font-weight="700" text-anchor="middle" fill="#222">≈ 60 km</text>
+<rect x="754" y="642" width="148" height="22" rx="11" fill="#fff" stroke="#d62828" stroke-width="1.5"/><text x="828" y="658" font-size="11.5" font-weight="700" text-anchor="middle" fill="#222">Rute 1 ±320 km (BPS)</text>
+<rect x="616" y="480" width="89" height="22" rx="11" fill="#fff" stroke="#d62828" stroke-width="1.5"/><text x="660" y="496" font-size="11.5" font-weight="700" text-anchor="middle" fill="#222">jalan berat</text>
+<rect x="578" y="1032" width="62" height="22" rx="11" fill="#fff" stroke="#d62828" stroke-width="1.5"/><text x="609" y="1048" font-size="11.5" font-weight="700" text-anchor="middle" fill="#222">≈ 77 km</text>
+<rect x="254" y="930" width="69" height="22" rx="11" fill="#fff" stroke="#d62828" stroke-width="1.5"/><text x="288" y="946" font-size="11.5" font-weight="700" text-anchor="middle" fill="#222">≈ 106 km</text>
+<rect x="116" y="522" width="69" height="22" rx="11" fill="#fff" stroke="#d62828" stroke-width="1.5"/><text x="150" y="538" font-size="11.5" font-weight="700" text-anchor="middle" fill="#222">≈ 138 km</text>
+<rect x="305" y="189" width="62" height="22" rx="11" fill="#fff" stroke="#d62828" stroke-width="1.5"/><text x="336" y="205" font-size="11.5" font-weight="700" text-anchor="middle" fill="#222">≈ 56 km</text>
+<rect x="408" y="306" width="95" height="22" rx="11" fill="#fff" stroke="#1d6fa5" stroke-width="1.5"/><text x="456" y="322" font-size="11.5" font-weight="700" text-anchor="middle" fill="#222">feri ≈ 30 km</text>
+<rect x="509" y="420" width="62" height="22" rx="11" fill="#fff" stroke="#d62828" stroke-width="1.5"/><text x="540" y="436" font-size="11.5" font-weight="700" text-anchor="middle" fill="#222">≈ 22 km</text>
+<circle cx="1026" cy="1056" r="11" fill="#fff" stroke="#222" stroke-width="3"/>
+<text x="1012" y="1084" font-size="15" font-weight="700" fill="#1b1b1b" text-anchor="end" paint-order="stroke" stroke="#f3f0dd" stroke-width="4">Kendari</text>
+<circle cx="750" cy="978" r="11" fill="#fff" stroke="#222" stroke-width="3"/>
+<text x="764" y="1004" font-size="15" font-weight="700" fill="#1b1b1b" text-anchor="start" paint-order="stroke" stroke="#f3f0dd" stroke-width="4">Unaaha</text>
+<circle cx="468" cy="1110" r="11" fill="#fff" stroke="#222" stroke-width="3"/>
+<text x="454" y="1136" font-size="15" font-weight="700" fill="#1b1b1b" text-anchor="end" paint-order="stroke" stroke="#f3f0dd" stroke-width="4">Kolaka</text>
+<circle cx="600" cy="1086" r="7" fill="#fff" stroke="#222" stroke-width="3"/>
+<text x="600" y="1072" font-size="12.5" font-weight="600" fill="#1b1b1b" text-anchor="middle" paint-order="stroke" stroke="#f3f0dd" stroke-width="4">Tirawuta (Kolaka Timur)</text>
+<circle cx="240" cy="774" r="7" fill="#fff" stroke="#222" stroke-width="3"/>
+<text x="226" y="779" font-size="12.5" font-weight="600" fill="#1b1b1b" text-anchor="end" paint-order="stroke" stroke="#f3f0dd" stroke-width="4">Lasusua (Kolaka Utara)</text>
+<circle cx="180" cy="258" r="7" fill="#fff" stroke="#222" stroke-width="3"/>
+<text x="166" y="246" font-size="12.5" font-weight="600" fill="#1b1b1b" text-anchor="end" paint-order="stroke" stroke="#f3f0dd" stroke-width="4">Malili (Luwu Timur)</text>
+<circle cx="792" cy="744" r="7" fill="#fff" stroke="#222" stroke-width="3"/>
+<text x="806" y="749" font-size="12.5" font-weight="600" fill="#1b1b1b" text-anchor="start" paint-order="stroke" stroke="#f3f0dd" stroke-width="4">Asera (Konawe Utara)</text>
+<circle cx="750" cy="546" r="7" fill="#fff" stroke="#222" stroke-width="3"/>
+<text x="764" y="542" font-size="12.5" font-weight="600" fill="#1b1b1b" text-anchor="start" paint-order="stroke" stroke="#f3f0dd" stroke-width="4">Wiwirano</text>
+<circle cx="270" cy="234" r="7" fill="#fff" stroke="#222" stroke-width="3"/>
+<text x="270" y="260" font-size="12.5" font-weight="600" fill="#1b1b1b" text-anchor="middle" paint-order="stroke" stroke="#f3f0dd" stroke-width="4">Wasuponda</text>
+<circle cx="408" cy="234" r="7" fill="#fff" stroke="#222" stroke-width="3"/>
+<text x="420" y="222" font-size="12.5" font-weight="600" fill="#1b1b1b" text-anchor="start" paint-order="stroke" stroke="#f3f0dd" stroke-width="4">Timampu (dermaga)</text>
+<circle cx="450" cy="390" r="7" fill="#fff" stroke="#222" stroke-width="3"/>
+<text x="436" y="394" font-size="12.5" font-weight="600" fill="#1b1b1b" text-anchor="end" paint-order="stroke" stroke="#f3f0dd" stroke-width="4">dermaga selatan</text>
+<circle cx="492" cy="444" r="22" fill="#1f6b3a" stroke="#fff" stroke-width="4"/><text x="492" y="451" font-size="20" text-anchor="middle" fill="#fff">★</text>
+<text x="492" y="488" font-size="21" font-weight="700" text-anchor="middle" fill="#1f6b3a" paint-order="stroke" stroke="#f3f0dd" stroke-width="5">KEC. ROUTA</text>
+<rect width="1200" height="84" fill="#1f6b3a"/><text x="30" y="38" font-size="26" font-weight="700" fill="#fff">Peta Skema Akses ke Kecamatan Routa</text><text x="30" y="64" font-size="14" fill="#d7efc7">Posisi kota dan garis pantai disederhanakan (perkiraan), bukan peta survei. Untuk navigasi gunakan Google Maps.</text>
+<rect x="0" y="1190" width="1200" height="200" fill="#fff"/><line x1="0" y1="1190" x2="1200" y2="1190" stroke="#d9dfc6" stroke-width="2"/>
+<text x="30" y="1230" font-size="15" font-weight="700">Keterangan</text>
+<line x1="30" y1="1260" x2="86" y2="1260" stroke="#d62828" stroke-width="6" stroke-linecap="round"/><text x="100" y="1264" font-size="13.5" fill="#333">Jalan beraspal / jalan utama</text>
+<line x1="30" y1="1290" x2="86" y2="1290" stroke="#d62828" stroke-width="6" stroke-linecap="round" stroke-dasharray="16 10"/><text x="100" y="1294" font-size="13.5" fill="#333">Jalan berat (tanah, bukit berbatu, sungai)</text>
+<line x1="30" y1="1320" x2="86" y2="1320" stroke="#1d6fa5" stroke-width="6" stroke-linecap="round" stroke-dasharray="3 9"/><text x="100" y="1324" font-size="13.5" fill="#333">Penyeberangan Danau Towuti (kapal 1x sehari)</text>
+<line x1="30" y1="1350" x2="86" y2="1350" stroke="#8a8f80" stroke-width="6" stroke-linecap="round" stroke-dasharray="2 8"/><text x="100" y="1354" font-size="13.5" fill="#333">Rencana jalan, belum terkonfirmasi</text>
+<text x="640" y="1230" font-size="15" font-weight="700">Cara membaca angka</text>
+<text x="640" y="1260" font-size="13" fill="#444">"≈ km" = hitungan perkiraan: jarak garis lurus × faktor kelokan jalan.</text>
+<text x="640" y="1286" font-size="13" fill="#444">Rute 1 memakai angka resmi BPS Kab. Konawe (±320 km Unaaha-Routa).</text>
+<text x="640" y="1312" font-size="13" fill="#444">Posisi kota dan garis pantai disederhanakan; bukan peta survei.</text>
+<text x="640" y="1338" font-size="13" fill="#444">Sumber: Pengadilan Agama Unaaha, BPS Konawe, geotag foto BPP.</text>
+<line x1="950" y1="1156" x2="1220" y2="1156" stroke="#222" stroke-width="3"/><text x="1085" y="1148" font-size="12" text-anchor="middle">±50 km</text>
+<g transform="translate(1140 1100)"><path d="M0 -34 L10 0 L0 -8 L-10 0 Z" fill="#222"/><text y="18" font-size="14" font-weight="700" text-anchor="middle">U</text></g>
+<rect x="780" y="102" width="400" height="300" rx="12" fill="#f3f0dd" stroke="#1f6b3a" stroke-width="2"/>
+<clipPath id="ic"><rect x="780" y="102" width="400" height="300" rx="12"/></clipPath><g clip-path="url(#ic)">
+<polygon points="780,102 1180,102 1180,152 1061,202 928,208 810,177" fill="#9fd0e6" stroke="#6fa9c4" stroke-width="2"/>
+<text x="1091" y="121" font-size="12" font-style="italic" text-anchor="middle" fill="#3f7794">Danau Towuti</text>
+<path d="M928 208 L943 252 L927 277" stroke="#d62828" stroke-width="4" fill="none" stroke-dasharray="10 6"/>
+<path d="M927 277 L990 282" stroke="#d62828" stroke-width="4" fill="none" stroke-dasharray="10 6"/></g>
+<circle cx="926" cy="277" r="7" fill="#1f6b3a" stroke="#fff" stroke-width="3"/><text x="916" y="299" font-size="12.5" font-weight="700" fill="#1f6b3a" text-anchor="end">Desa Parudongka</text>
+<circle cx="991" cy="282" r="7" fill="#1f6b3a" stroke="#fff" stroke-width="3"/><text x="1003" y="304" font-size="12.5" font-weight="700" fill="#1f6b3a" text-anchor="start">Desa Tirawonua</text>
+<circle cx="928" cy="208" r="6" fill="#fff" stroke="#1d6fa5" stroke-width="3"/><text x="938" y="228" font-size="11.5" fill="#1d6fa5">dermaga selatan (perkiraan)</text>
+<text x="794" y="126" font-size="14" font-weight="700" fill="#1f6b3a">Wilayah Routa (inset)</text>
+<text x="794" y="368" font-size="11" fill="#555">Titik desa dari geotag foto kegiatan BPP.</text><text x="794" y="384" font-size="11" fill="#555">Desa lain belum dipetakan.</text>
+</svg>

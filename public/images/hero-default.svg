@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 700" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7DD3FC"/><stop offset="1" stop-color="#E0F2FE"/></linearGradient>
+    <linearGradient id="field" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4ADE80"/><stop offset="1" stop-color="#15803D"/></linearGradient>
+  </defs>
+  <rect width="1600" height="700" fill="url(#sky)"/>
+  <ellipse cx="300" cy="120" rx="140" ry="34" fill="#fff" opacity=".8"/>
+  <ellipse cx="1180" cy="90" rx="190" ry="40" fill="#fff" opacity=".7"/>
+  <path d="M0 360 L180 210 L330 330 L520 170 L720 340 L900 220 L1100 350 L1300 190 L1600 360 V700 H0Z" fill="#166534" opacity=".85"/>
+  <path d="M0 420 L240 300 L420 400 L660 280 L880 410 L1120 290 L1360 400 L1600 320 V700 H0Z" fill="#15803D"/>
+  <rect y="450" width="1600" height="250" fill="url(#field)"/>
+  <g stroke="#14532D" stroke-width="3" opacity=".35">
+    <path d="M0 500 Q800 470 1600 500"/><path d="M0 550 Q800 515 1600 550"/><path d="M0 605 Q800 565 1600 605"/><path d="M0 660 Q800 615 1600 660"/>
+  </g>
+</svg>
