@@ -6,7 +6,7 @@
     }
     $open = 'https://www.google.com/maps/search/?api=1&query=' . urlencode($dest);
 @endphp
-<section class="section pt-0">
+<section class="section">
     <div class="container">
         <h2 class="section-title"><i class="bi bi-google text-green me-2"></i>Google Maps</h2>
         <div class="chip-row mb-3" id="gmap-tabs">
