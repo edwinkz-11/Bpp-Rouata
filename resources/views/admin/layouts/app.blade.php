@@ -30,9 +30,10 @@
         ['Peta Wilayah', 'bi-geo-alt', route('admin.locations.index'), request()->routeIs('admin.locations.*')],
         ['Data Jalur', 'bi-signpost-split', route('admin.routes.index'), request()->routeIs('admin.routes.*')],
         ['Penyuluh', 'bi-person-badge', route('admin.workers.index'), request()->routeIs('admin.workers.*')],
-        ['Pengaturan Website', 'bi-gear', route('admin.settings.edit'), request()->routeIs('admin.settings.*')],
+
     ];
     if (auth()->user()->isAdmin()) {
+        $menu[] = ['Pengaturan Website', 'bi-gear', route('admin.settings.edit'), request()->routeIs('admin.settings.*')];
         $menu[] = ['Manajemen Pengguna', 'bi-people', route('admin.users.index'), request()->routeIs('admin.users.*')];
         $menu[] = ['Log Aktivitas', 'bi-clock-history', route('admin.logs.index'), request()->routeIs('admin.logs.*')];
     }

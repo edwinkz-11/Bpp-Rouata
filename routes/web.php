@@ -46,7 +46,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('login', [LoginController::class, 'show'])->name('login');
     Route::post('login', [LoginController::class, 'login'])->name('login.submit');
 
-    Route::middleware('auth')->group(function () {
+    Route::middleware(['auth', 'auth.session'])->group(function () {
         Route::post('logout', [LoginController::class, 'logout'])->name('logout');
         Route::get('/', [Admin\DashboardController::class, 'index'])->name('dashboard');
 
@@ -85,11 +85,13 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('akun', [Admin\AccountController::class, 'edit'])->name('account.edit');
         Route::put('akun', [Admin\AccountController::class, 'update'])->name('account.update');
 
-        Route::get('pengaturan',[Admin\SettingController::class, 'edit'])->name('settings.edit');
-        Route::put('pengaturan', [Admin\SettingController::class, 'update'])->name('settings.update');
+
+
 
         // Hanya Admin
         Route::middleware(EnsureRole::class . ':admin')->group(function () {
+            Route::get('pengaturan', [Admin\SettingController::class, 'edit'])->name('settings.edit');
+            Route::put('pengaturan', [Admin\SettingController::class, 'update'])->name('settings.update');
             Route::resource('pengguna', Admin\UserController::class)
                 ->parameters(['pengguna' => 'user'])->names('users')->except('show');
             Route::get('log-aktivitas', [Admin\ActivityLogController::class, 'index'])->name('logs.index');

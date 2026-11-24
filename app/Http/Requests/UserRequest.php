@@ -21,7 +21,7 @@ class UserRequest extends FormRequest
             'name' => ['required', 'string', 'max:100'],
             'email' => ['required', 'email', 'max:150', Rule::unique('users', 'email')->ignore($this->route('user'))],
             'role' => ['required', Rule::in(['admin', 'editor'])],
-            'password' => [$isCreate ? 'required' : 'nullable', 'confirmed', Password::min(8)],
+            'password' => [$isCreate ? 'required' : 'nullable', 'confirmed', Password::min(10)->mixedCase()->numbers()],
         ];
     }
 

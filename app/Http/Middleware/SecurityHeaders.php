@@ -19,6 +19,12 @@ class SecurityHeaders
         $headers->set('Referrer-Policy', 'strict-origin-when-cross-origin');
         $headers->set('Permissions-Policy', 'camera=(), microphone=(), geolocation=(), payment=()');
 
+        // Halaman panel admin: jangan disimpan di cache dan jangan diindeks mesin pencari.
+        if ($request->is('admin', 'admin/*')) {
+            $headers->set('Cache-Control', 'no-store, private');
+            $headers->set('X-Robots-Tag', 'noindex, nofollow');
+        }
+
         if (config('security.hsts_enabled') && $request->isSecure()) {
             $headers->set('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
         }
