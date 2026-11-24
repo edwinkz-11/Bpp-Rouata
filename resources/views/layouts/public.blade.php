@@ -3,18 +3,36 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@yield('title', 'Beranda') | {{ $bpp->name }}</title>
-    <meta name="description" content="@yield('description', 'Pusat informasi pertanian Kecamatan Routa: kegiatan penyuluhan, potensi pertanian, dan peta wilayah.')">
+    @php
+        // Nilai dari @section('x', '...') sudah di-escape oleh Blade, jadi dicetak apa adanya. Nilai lain di-escape manual.
+        $metaTitle = trim($__env->yieldContent('title', 'Beranda')) . ' | ' . e($bpp->name);
+        $metaDesc = trim($__env->yieldContent('description')) ?: 'Pusat informasi pertanian Kecamatan Routa: kegiatan penyuluhan, potensi pertanian, dan peta wilayah.';
+        $metaImage = trim($__env->yieldContent('og_image')) ?: e($bpp->logo_url);
+    @endphp
+    <title>{!! $metaTitle !!}</title>
+    <meta name="description" content="{!! $metaDesc !!}">
+    <link rel="canonical" href="{{ url()->current() }}">
+    <meta property="og:site_name" content="{{ $bpp->name }}">
+    <meta property="og:locale" content="id_ID">
+    <meta property="og:type" content="{{ trim($__env->yieldContent('og_type')) ?: 'website' }}">
+    <meta property="og:title" content="{!! $metaTitle !!}">
+    <meta property="og:description" content="{!! $metaDesc !!}">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:image" content="{!! $metaImage !!}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{!! $metaTitle !!}">
+    <meta name="twitter:description" content="{!! $metaDesc !!}">
+    <meta name="twitter:image" content="{!! $metaImage !!}">
     <link rel="icon" href="{{ $bpp->logo_url }}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="{{ asset('vendor/poppins/poppins.css') }}" rel="stylesheet">
+    <link href="{{ asset('vendor/bootstrap/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('vendor/bootstrap-icons/bootstrap-icons.min.css') }}" rel="stylesheet">
+    @stack('head')
     @stack('styles')
     <link href="{{ asset('css/site.css') }}" rel="stylesheet">
 </head>
 <body>
+<a class="skip-link" href="#konten">Lewati ke konten utama</a>
 @php
     $nav = [
         ['home', 'Home', 'bi-house-door-fill', 'home'],
@@ -25,10 +43,11 @@
         ['map', 'Peta Wilayah', 'bi-geo-alt-fill', 'map'],
         ['about', 'Tentang BPP', 'bi-info-circle-fill', 'about'],
     ];
+    $publicInfoActive = request()->routeIs('documents.*', 'ppid', 'contact');
 @endphp
 
 <header class="site-header sticky-top">
-    <nav class="navbar navbar-expand-xl">
+    <nav class="navbar navbar-expand-xxl" aria-label="Navigasi utama">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center gap-2" href="{{ route('home') }}">
                 <img src="{{ $bpp->logo_url }}" alt="Logo BPP" width="46" height="46">
@@ -41,20 +60,34 @@
                 <i class="bi bi-list fs-2"></i>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="mainNav">
-                <ul class="navbar-nav gap-xl-1 mt-3 mt-xl-0">
+                <ul class="navbar-nav gap-xxl-1 mt-3 mt-xxl-0">
                     @foreach ($nav as [$route, $label, $icon, $pattern])
                         <li class="nav-item">
-                            <a class="nav-link {{ request()->routeIs($pattern) ? 'active' : '' }}" href="{{ route($route) }}">{{ $label }}
-                            </a>
+                            <a class="nav-link {{ request()->routeIs($pattern) ? 'active' : '' }}" href="{{ route($route) }}" @if (request()->routeIs($pattern)) aria-current="page" @endif>{{ $label }}</a>
                         </li>
+                        @if ($route === 'news')
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle {{ $publicInfoActive ? 'active' : '' }}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Informasi Publik</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="{{ route('documents.index') }}">Dokumen dan Unduhan</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('ppid') }}">PPID</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('contact') }}">Kontak dan Pengaduan</a></li>
+                                </ul>
+                            </li>
+                        @endif
                     @endforeach
                 </ul>
+                <form class="nav-search ms-xxl-2 mt-3 mt-xxl-0" action="{{ route('search') }}" method="GET" role="search">
+                    <label for="nav-q" class="visually-hidden">Cari di situs</label>
+                    <input id="nav-q" type="search" name="q" value="{{ request()->routeIs('search') ? request('q') : '' }}" class="form-control form-control-sm" placeholder="Cari…" minlength="3" maxlength="100">
+                    <button class="btn btn-sm btn-green" aria-label="Cari"><i class="bi bi-search"></i></button>
+                </form>
             </div>
         </div>
     </nav>
 </header>
 
-<main>@yield('content')</main>
+<main id="konten" tabindex="-1">@yield('content')</main>
 
 <footer class="site-footer">
     <div class="container">
@@ -89,7 +122,10 @@
                 <div class="small d-flex flex-wrap gap-3">
                     <a href="{{ route('gallery') }}">Galeri</a>
                     <a href="{{ route('activities.index') }}">Kegiatan</a>
-                    <a href="{{ route('map') }}">Peta</a>
+                    <a href="{{ route('documents.index') }}">Dokumen</a>
+                    <a href="{{ route('ppid') }}">PPID</a>
+                    <a href="{{ route('contact') }}">Kontak dan Pengaduan</a>
+                    <a href="{{ route('privacy') }}">Kebijakan Privasi</a>
                     <a href="{{ route('admin.login') }}">Masuk Petugas</a>
                 </div>
             </div>
@@ -101,13 +137,13 @@
 </footer>
 
 {{-- Lightbox foto --}}
-<div class="modal fade" id="lightbox" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="lightbox" tabindex="-1" aria-label="Pratinjau foto" aria-hidden="true">
     <div class="modal-dialog modal-xl modal-dialog-centered">
         <div class="modal-content bg-dark border-0">
             <div class="modal-body p-0 position-relative text-center">
                 <button type="button" class="btn-close btn-close-white lb-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
                 <button type="button" class="lb-nav lb-prev" aria-label="Sebelumnya"><i class="bi bi-chevron-left"></i></button>
-                <img id="lb-img" src="" alt="" class="img-fluid">
+                <img id="lb-img" src="" alt="Foto dokumentasi" class="img-fluid">
                 <button type="button" class="lb-nav lb-next" aria-label="Berikutnya"><i class="bi bi-chevron-right"></i></button>
                 <div class="lb-caption" id="lb-caption"></div>
             </div>
@@ -115,7 +151,7 @@
     </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="{{ asset('vendor/bootstrap/bootstrap.bundle.min.js') }}"></script>
 @stack('scripts')
 <script src="{{ asset('js/site.js') }}"></script>
 </body>

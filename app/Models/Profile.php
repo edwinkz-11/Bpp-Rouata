@@ -2,13 +2,14 @@
 
 namespace App\Models;
 
+use App\Models\Concerns\LogsActivity;
 use App\Models\Concerns\DeletesImages;
 use App\Services\ImageService;
 use Illuminate\Database\Eloquent\Model;
 
 class Profile extends Model
 {
-    use DeletesImages;
+    use DeletesImages, LogsActivity;
 
     public const TYPE_BPP = 'bpp';
     public const TYPE_DISTRICT = 'kecamatan';

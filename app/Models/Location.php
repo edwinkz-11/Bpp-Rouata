@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Concerns\LogsActivity;
 use App\Models\Concerns\DeletesImages;
 use App\Services\ImageService;
 use Illuminate\Database\Eloquent\Builder;
@@ -10,7 +11,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Location extends Model
 {
-    use DeletesImages;
+    use DeletesImages, LogsActivity;
 
     public const CATEGORIES = [
         'kantor_bpp' => ['label' => 'Kantor BPP', 'color' => '#15803D', 'icon' => 'bi-house-door-fill'],

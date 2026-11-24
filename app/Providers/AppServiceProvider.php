@@ -6,8 +6,11 @@ use App\Models\Profile;
 use App\Models\Setting;
 use App\Models\User;
 use Carbon\Carbon;
+use Illuminate\Cache\RateLimiting\Limit;
+use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -22,6 +25,14 @@ class AppServiceProvider extends ServiceProvider
     {
         Paginator::useBootstrapFive();
         Carbon::setLocale('id');
+
+        // Pembatas laju untuk halaman publik. Pesan kontak dibatasi ketat untuk menahan spam.
+        RateLimiter::for('public', fn (Request $r) => Limit::perMinute(120)->by($r->ip()));
+        RateLimiter::for('search', fn (Request $r) => Limit::perMinute(30)->by($r->ip()));
+        RateLimiter::for('contact', fn (Request $r) => [
+            Limit::perMinute(2)->by($r->ip()),
+            Limit::perHour(8)->by($r->ip()),
+        ]);
 
         // Hanya Admin yang mengelola akun pengguna dan data struktural (desa, kategori, penyuluh).
         Gate::define('manage-users', fn (User $user) => $user->isAdmin());

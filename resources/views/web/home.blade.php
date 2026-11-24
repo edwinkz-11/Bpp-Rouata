@@ -3,7 +3,22 @@
 @section('title', 'Beranda')
 
 @push('styles')
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="{{ asset('vendor/leaflet/leaflet.css') }}">
+@endpush
+
+@push('head')
+<script type="application/ld+json">{!! json_encode(array_filter([
+    '@@context' => 'https://schema.org',
+    '@@type' => 'GovernmentOrganization',
+    'name' => $bpp->institution_name ?: $bpp->name,
+    'alternateName' => $bpp->name,
+    'url' => url('/'),
+    'logo' => $bpp->logo_url,
+    'telephone' => $bpp->phone ?: null,
+    'email' => $bpp->email ?: null,
+    'address' => $bpp->address ? ['@@type' => 'PostalAddress', 'streetAddress' => $bpp->address, 'addressCountry' => 'ID'] : null,
+    'sameAs' => array_values(array_filter([$site['instagram_url'] ?? null, $site['facebook_url'] ?? null, $site['youtube_url'] ?? null, $site['tiktok_url'] ?? null])) ?: null,
+]), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HEX_AMP) !!}</script>
 @endpush
 
 @section('content')
@@ -136,6 +151,25 @@
 </section>
 
 {{-- F. GALERI --}}
+@if ($posts->isNotEmpty())
+<section class="section" id="berita-bpp">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-end mb-4 flex-wrap gap-2">
+            <div>
+                <div class="section-label"><i class="bi bi-megaphone"></i> Dari BPP Routa</div>
+                <h2 class="section-title mb-0">Berita Terbaru BPP</h2>
+            </div>
+            <a href="{{ route('news') }}" class="btn btn-outline-green">Semua Berita</a>
+        </div>
+        <div class="row g-4">
+            @foreach ($posts as $post)
+                <div class="col-md-6 col-lg-4">@include('partials.post-card', ['post' => $post])</div>
+            @endforeach
+        </div>
+    </div>
+</section>
+@endif
+
 @include('partials.kementan-news', ['news' => $news, 'compact' => true])
 
 <section class="section pt-0">
@@ -167,6 +201,6 @@
 @endsection
 
 @push('scripts')
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="{{ asset('vendor/leaflet/leaflet.js') }}"></script>
     <script src="{{ asset('js/public-map.js') }}"></script>
 @endpush

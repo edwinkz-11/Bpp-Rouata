@@ -193,3 +193,11 @@ php artisan db:seed --class=KegiatanFotoSeeder
 ```
 
 Aman dijalankan ulang (album berjudul sama dilewati). Album draft tidak tampil publik; terbitkan lewat Admin > Kegiatan setelah lokasi dipastikan.
+
+---
+
+## Fitur tambahan (pembaruan standar situs instansi)
+
+Berita BPP sendiri, dokumen dan PPID, formulir kontak dan pengaduan, pencarian, SEO (sitemap, robots, Open Graph, structured data), header keamanan, log aktivitas admin, statistik kunjungan, optimasi gambar WebP, aset lokal tanpa CDN, backup database, aksesibilitas dasar, tes otomatis, dan GitHub Actions. Penjelasan pemakaian ada di [`docs/PANDUAN_ADMIN.md`](docs/PANDUAN_ADMIN.md). Contoh konfigurasi server produksi ada di `.env.production.example`.
+
+Setelah menarik pembaruan ini, jalankan `php artisan migrate` (ada 5 tabel baru).

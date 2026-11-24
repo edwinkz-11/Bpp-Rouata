@@ -3,7 +3,7 @@
 @section('title', $route->exists ? 'Edit Jalur' : 'Tambah Jalur')
 
 @push('styles')
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="{{ asset('vendor/leaflet/leaflet.css') }}">
 @endpush
 
 @section('content')
@@ -55,6 +55,6 @@
 @endsection
 
 @push('scripts')
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="{{ asset('vendor/leaflet/leaflet.js') }}"></script>
     <script src="{{ asset('js/admin-map.js') }}"></script>
 @endpush

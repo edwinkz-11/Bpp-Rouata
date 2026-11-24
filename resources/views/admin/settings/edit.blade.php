@@ -21,6 +21,13 @@
     </div>
 
     <div class="card-box mb-3">
+        <h2 class="h6 fw-bold mb-3">Informasi Publik (PPID)</h2>
+        <div class="row g-3">
+            <x-field name="ppid_intro" type="textarea" rows="6" label="Penjelasan layanan informasi publik" :value="$v('ppid_intro')" help="Tampil di halaman PPID. Isi dengan dasar hukum, prosedur permohonan, dan waktu layanan sesuai ketentuan instansi. Dokumen diunggah lewat menu Dokumen dan PPID." />
+        </div>
+    </div>
+
+    <div class="card-box mb-3">
         <h2 class="h6 fw-bold mb-3">Media Sosial</h2>
         <div class="row g-3">
             <x-field name="instagram_url" type="url" label="Instagram" :value="$v('instagram_url')" col="6" />

@@ -11,16 +11,28 @@ use Illuminate\Support\Facades\Route;
 | Website publik
 |--------------------------------------------------------------------------
 */
-Route::get('/', [Web\HomeController::class, 'index'])->name('home');
-Route::get('/profil-kecamatan', [Web\DistrictController::class, 'show'])->name('district');
-Route::get('/kegiatan', [Web\ActivityController::class, 'index'])->name('activities.index');
-Route::get('/kegiatan/{activity:slug}', [Web\ActivityController::class, 'show'])->name('activities.show');
-Route::get('/potensi-pertanian', [Web\CommodityController::class, 'index'])->name('commodities.index');
-Route::get('/peta-wilayah', [Web\MapController::class, 'index'])->name('map');
-Route::get('/peta-wilayah/data', [Web\MapController::class, 'data'])->name('map.data');
-Route::get('/galeri', [Web\GalleryController::class, 'index'])->name('gallery');
-Route::get('/berita', [Web\NewsController::class, 'index'])->name('news');
-Route::get('/tentang-bpp', [Web\AboutController::class, 'index'])->name('about');
+Route::middleware('throttle:public')->group(function () {
+    Route::get('/', [Web\HomeController::class, 'index'])->name('home');
+    Route::get('/profil-kecamatan', [Web\DistrictController::class, 'show'])->name('district');
+    Route::get('/kegiatan', [Web\ActivityController::class, 'index'])->name('activities.index');
+    Route::get('/kegiatan/{activity:slug}', [Web\ActivityController::class, 'show'])->name('activities.show');
+    Route::get('/potensi-pertanian', [Web\CommodityController::class, 'index'])->name('commodities.index');
+    Route::get('/peta-wilayah', [Web\MapController::class, 'index'])->name('map');
+    Route::get('/peta-wilayah/data', [Web\MapController::class, 'data'])->name('map.data');
+    Route::get('/galeri', [Web\GalleryController::class, 'index'])->name('gallery');
+    Route::get('/berita', [Web\NewsController::class, 'index'])->name('news');
+    Route::get('/berita/{post:slug}', [Web\PostController::class, 'show'])->name('posts.show');
+    Route::get('/tentang-bpp', [Web\AboutController::class, 'index'])->name('about');
+    Route::get('/dokumen', [Web\DocumentController::class, 'index'])->name('documents.index');
+    Route::get('/dokumen/{document}/unduh', [Web\DocumentController::class, 'download'])->name('documents.download');
+    Route::get('/ppid', [Web\PpidController::class, 'index'])->name('ppid');
+    Route::get('/kontak', [Web\ContactController::class, 'create'])->name('contact');
+    Route::post('/kontak', [Web\ContactController::class, 'store'])->middleware('throttle:contact')->name('contact.store');
+    Route::get('/cari', [Web\SearchController::class, 'index'])->middleware('throttle:search')->name('search');
+    Route::get('/kebijakan-privasi', [Web\PageController::class, 'privacy'])->name('privacy');
+    Route::get('/sitemap.xml', [Web\SeoController::class, 'sitemap'])->name('sitemap');
+    Route::get('/robots.txt', [Web\SeoController::class, 'robots'])->name('robots');
+});
 
 /*
 |--------------------------------------------------------------------------
@@ -58,6 +70,13 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::resource('jalur', Admin\MapRouteController::class)
             ->parameters(['jalur' => 'mapRoute'])->names('routes')->except('show');
 
+        Route::resource('dokumen', Admin\DocumentController::class)
+            ->parameters(['dokumen' => 'document'])->names('documents')->except('show');
+        Route::resource('berita', Admin\PostController::class)
+            ->parameters(['berita' => 'post'])->names('posts')->except('show');
+        Route::resource('pesan', Admin\ContactMessageController::class)
+            ->parameters(['pesan' => 'message'])->names('messages')->only(['index', 'show', 'update', 'destroy']);
+
         Route::get('galeri', [Admin\GalleryController::class, 'index'])->name('gallery.index');
         Route::post('galeri', [Admin\GalleryController::class, 'store'])->name('gallery.store');
         Route::patch('galeri/{photo}', [Admin\GalleryController::class, 'update'])->name('gallery.update');
@@ -73,6 +92,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::middleware(EnsureRole::class . ':admin')->group(function () {
             Route::resource('pengguna', Admin\UserController::class)
                 ->parameters(['pengguna' => 'user'])->names('users')->except('show');
+            Route::get('log-aktivitas', [Admin\ActivityLogController::class, 'index'])->name('logs.index');
         });
     });
 });

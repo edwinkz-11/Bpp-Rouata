@@ -17,6 +17,7 @@ class SettingRequest extends FormRequest
         return [
             'slogan' => ['nullable', 'string', 'max:255'],
             'footer_text' => ['nullable', 'string', 'max:255'],
+            'ppid_intro' => ['nullable', 'string', 'max:5000'],
             'instagram_url' => ['nullable', 'url', 'max:255'],
             'facebook_url' => ['nullable', 'url', 'max:255'],
             'youtube_url' => ['nullable', 'url', 'max:255'],
@@ -43,7 +44,7 @@ class SettingRequest extends FormRequest
     public function attributes(): array
     {
         return [
-            'slogan' => 'slogan', 'footer_text' => 'teks footer', 'instagram_url' => 'tautan Instagram',
+            'slogan' => 'slogan', 'footer_text' => 'teks footer', 'ppid_intro' => 'penjelasan PPID', 'instagram_url' => 'tautan Instagram',
             'facebook_url' => 'tautan Facebook', 'youtube_url' => 'tautan YouTube', 'tiktok_url' => 'tautan TikTok',
             'hero_image' => 'foto hero', 'struktur_image' => 'gambar struktur', 'video_tim' => 'video', 'map_center_lat' => 'latitude pusat peta',
             'map_center_lng' => 'longitude pusat peta', 'map_zoom' => 'zoom peta',

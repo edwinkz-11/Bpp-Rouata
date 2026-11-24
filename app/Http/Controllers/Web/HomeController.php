@@ -7,6 +7,7 @@ use App\Models\Activity;
 use App\Models\ActivityPhoto;
 use App\Models\Commodity;
 use App\Models\Location;
+use App\Models\Post;
 use App\Models\Profile;
 use App\Models\Setting;
 use App\Services\KementanNewsService;
@@ -22,6 +23,7 @@ class HomeController extends Controller
                 ->orderByDesc('activity_date')->orderByDesc('id')->take(3)->get(),
             'commodities' => Commodity::active()->latest('id')->get(),
             'photos' => ActivityPhoto::whereHas('activity', fn ($q) => $q->published())->latest('id')->take(6)->get(),
+            'posts' => Post::published()->latest('published_at')->latest('id')->take(3)->get(),
             'news' => $news->latest(3),
             'mapConfig' => $this->miniMapConfig(),
             'hasLocations' => Location::visible()->exists(),

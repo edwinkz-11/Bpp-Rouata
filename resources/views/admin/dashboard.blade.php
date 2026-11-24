@@ -5,7 +5,7 @@
 @section('content')
 <div class="row g-3 mb-4">
     @foreach ($stats as $s)
-        <div class="col-6 col-md-4 col-xl-2">
+        <div class="col-6 col-md-4 col-xl-3">
             <a href="{{ route($s['route']) }}" class="stat-card">
                 <i class="bi {{ $s['icon'] }}"></i>
                 <div class="stat-num">{{ number_format($s['value'], 0, ',', '.') }}</div>
@@ -45,6 +45,21 @@
     </div>
 
     <div class="col-lg-4">
+        <div class="card-box mb-3">
+            <h2 class="h6 fw-bold mb-3">Statistik Kunjungan</h2>
+            <div class="row text-center g-2 mb-3">
+                @foreach (['today' => 'Hari ini', 'week' => '7 hari', 'month' => '30 hari', 'total' => 'Total'] as $key => $label)
+                    <div class="col-3"><div class="fw-bold">{{ number_format($visits[$key], 0, ',', '.') }}</div><div class="small text-muted">{{ $label }}</div></div>
+                @endforeach
+            </div>
+            <div class="small fw-semibold mb-1">Halaman terpopuler (30 hari)</div>
+            @forelse ($topPages as $t)
+                <div class="d-flex justify-content-between small"><span class="text-truncate me-2">{{ $t->path }}</span><span>{{ number_format($t->total, 0, ',', '.') }}</span></div>
+            @empty
+                <div class="small text-muted">Belum ada data kunjungan.</div>
+            @endforelse
+            <div class="form-text mt-2">Tanpa menyimpan IP atau cookie pelacak. Kunjungan bot dan halaman admin tidak dihitung.</div>
+        </div>
         <div class="card-box">
             <h2 class="h6 fw-bold mb-3">Status Pemetaan</h2>
             @foreach ($mapping as $label => $counts)
