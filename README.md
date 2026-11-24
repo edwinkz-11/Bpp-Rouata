@@ -2,7 +2,7 @@
 
 **Cara tercepat:** `./setup.sh` (butuh PHP 8.2+, Composer, MySQL) atau `docker compose up --build` (butuh Docker saja). Keduanya membuat proyek, mengatur .env, migrasi, dan akun admin otomatis.
 
-Sistem informasi pertanian untuk **BPP Pertanian Routa (Balai Penyuluh Pertanian Kecamatan Routa)**:
+Sistem informasi pertanian untuk **BPP Pertanian Routa (Balai Penyuluhan Pertanian Kecamatan Routa)**:
 
 1. **Website publik**: Home, Profil Kecamatan, Kegiatan Pertanian (filter, pencarian, pagination, lightbox), Potensi Pertanian, Peta Wilayah (Leaflet + OpenStreetMap), Galeri, Tentang BPP.
 2. **Dashboard admin** (`/admin`): kelola profil, desa, kegiatan, galeri, komoditas, titik peta, jalur, penyuluh, pengaturan website, dan pengguna.
