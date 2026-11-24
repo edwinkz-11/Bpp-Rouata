@@ -48,7 +48,7 @@
 
 <header class="site-header sticky-top">
     <nav class="navbar navbar-expand-xxl" aria-label="Navigasi utama">
-        <div class="container">
+        <div class="container nav-wide">
             <a class="navbar-brand d-flex align-items-center gap-2" href="{{ route('home') }}">
                 <img src="{{ $bpp->logo_url }}" alt="Logo BPP" width="46" height="46">
                 <span class="lh-sm">

@@ -36,7 +36,7 @@ class Profile extends Model
     public static function forType(string $type): self
     {
         $defaults = $type === self::TYPE_BPP
-            ? ['name' => 'BPP Pertanian Routa', 'institution_name' => 'Balai Penyuluh Pertanian Kecamatan Routa']
+            ? ['name' => 'BPP Pertanian Routa', 'institution_name' => 'Balai Penyuluhan Pertanian Kecamatan Routa']
             : ['name' => 'Kecamatan Routa'];
 
         return static::where('type', $type)->first() ?? new static($defaults + ['type' => $type]);

@@ -60,7 +60,7 @@ class AppServiceProvider extends ServiceProvider
                 return $shared = [
                     'bpp' => new Profile([
                         'name' => 'BPP Pertanian Routa',
-                        'institution_name' => 'Balai Penyuluh Pertanian Kecamatan Routa',
+                        'institution_name' => 'Balai Penyuluhan Pertanian Kecamatan Routa',
                     ]),
                     'site' => [],
                 ];

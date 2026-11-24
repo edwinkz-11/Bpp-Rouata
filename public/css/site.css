@@ -31,8 +31,20 @@ a:hover { color: var(--g-dark); }
 .site-header { background: #fff; box-shadow: 0 2px 12px rgba(0, 0, 0, .06); z-index: 1030; }
 .navbar-brand img { object-fit: contain; }
 .brand-title { color: var(--g-dark); font-size: 1.05rem; }
-.brand-sub { color: var(--gray); font-size: .72rem; }
+.brand-sub { color: var(--gray); font-size: .72rem; white-space: nowrap; }
 .navbar .nav-link { color: #1f2937; font-weight: 500; font-size: .9rem; padding: .55rem .7rem !important; border-radius: 10px; }
+@media (min-width: 1400px) {
+  .navbar .nav-wide { max-width: 1480px; }
+  .navbar .nav-link { white-space: nowrap; }
+  .navbar-collapse { align-items: center; }
+  .navbar-nav { align-items: center; }
+}
+@media (min-width: 1400px) and (max-width: 1599.98px) {
+  .navbar .nav-link { font-size: .84rem; padding: .5rem .45rem !important; }
+  .nav-search .form-control { width: 5.5rem; }
+  .brand-title { font-size: .98rem; }
+  .brand-sub { font-size: .66rem; }
+}
 .navbar .nav-link:hover { color: var(--g); background: var(--g-light); }
 .navbar .nav-link.active { background: var(--g); color: #fff; }
 .navbar-toggler { border: 0; color: var(--g-dark); }
