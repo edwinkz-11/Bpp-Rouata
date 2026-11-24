@@ -2,9 +2,18 @@
 
 namespace Tests;
 
+use App\Models\User;
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
 
 abstract class TestCase extends BaseTestCase
 {
-    //
+    protected function admin(): User
+    {
+        return User::factory()->create(['role' => 'admin']);
+    }
+
+    protected function editor(): User
+    {
+        return User::factory()->create(['role' => 'editor']);
+    }
 }

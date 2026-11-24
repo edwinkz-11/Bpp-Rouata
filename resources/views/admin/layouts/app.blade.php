@@ -7,9 +7,9 @@
     <meta name="robots" content="noindex, nofollow">
     <title>@yield('title', 'Dashboard') | Admin {{ $bpp->name }}</title>
     <link rel="icon" href="{{ $bpp->logo_url }}">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="{{ asset('vendor/poppins/poppins.css') }}" rel="stylesheet">
+    <link href="{{ asset('vendor/bootstrap/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('vendor/bootstrap-icons/bootstrap-icons.min.css') }}" rel="stylesheet">
     @stack('styles')
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
 </head>
@@ -22,6 +22,9 @@
         ['Data Desa', 'bi-houses', route('admin.villages.index'), request()->routeIs('admin.villages.*')],
         ['Kegiatan Pertanian', 'bi-calendar-event', route('admin.activities.index'), request()->routeIs('admin.activities.*')],
         ['Kategori Kegiatan', 'bi-tags', route('admin.categories.index'), request()->routeIs('admin.categories.*')],
+        ['Berita BPP', 'bi-newspaper', route('admin.posts.index'), request()->routeIs('admin.posts.*')],
+        ['Dokumen dan PPID', 'bi-folder2-open', route('admin.documents.index'), request()->routeIs('admin.documents.*')],
+        ['Pesan Masuk', 'bi-inbox', route('admin.messages.index'), request()->routeIs('admin.messages.*'), \App\Models\ContactMessage::unreadCount()],
         ['Galeri Dokumentasi', 'bi-images', route('admin.gallery.index'), request()->routeIs('admin.gallery.*')],
         ['Potensi Pertanian', 'bi-flower2', route('admin.commodities.index'), request()->routeIs('admin.commodities.*')],
         ['Peta Wilayah', 'bi-geo-alt', route('admin.locations.index'), request()->routeIs('admin.locations.*')],
@@ -31,6 +34,7 @@
     ];
     if (auth()->user()->isAdmin()) {
         $menu[] = ['Manajemen Pengguna', 'bi-people', route('admin.users.index'), request()->routeIs('admin.users.*')];
+        $menu[] = ['Log Aktivitas', 'bi-clock-history', route('admin.logs.index'), request()->routeIs('admin.logs.*')];
     }
 @endphp
 
@@ -41,8 +45,9 @@
             <span><strong>Admin BPP Routa</strong><small>Panel pengelola</small></span>
         </a>
         <nav class="side-nav">
-            @foreach ($menu as [$label, $icon, $url, $isActive])
-                <a href="{{ $url }}" class="{{ $isActive ? 'active' : '' }}"><i class="bi {{ $icon }}"></i>{{ $label }}</a>
+            @foreach ($menu as $item)
+                @php [$label, $icon, $url, $isActive] = $item; $badge = $item[4] ?? 0; @endphp
+                <a href="{{ $url }}" class="{{ $isActive ? 'active' : '' }}"><i class="bi {{ $icon }}"></i>{{ $label }}@if (! empty($badge)) <span class="badge text-bg-warning ms-auto">{{ $badge }}</span>@endif</a>
             @endforeach
         </nav>
         <a href="{{ route('home') }}" target="_blank" class="side-site"><i class="bi bi-box-arrow-up-right"></i> Lihat website</a>
@@ -87,7 +92,7 @@
     </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="{{ asset('vendor/bootstrap/bootstrap.bundle.min.js') }}"></script>
 @stack('scripts')
 <script src="{{ asset('js/admin.js') }}"></script>
 </body>

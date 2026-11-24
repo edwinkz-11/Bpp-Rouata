@@ -14,7 +14,7 @@ use Illuminate\View\View;
 class SettingController extends Controller
 {
     private const KEYS = [
-        'slogan', 'footer_text', 'instagram_url', 'facebook_url', 'youtube_url', 'tiktok_url',
+        'slogan', 'footer_text', 'ppid_intro', 'instagram_url', 'facebook_url', 'youtube_url', 'tiktok_url',
         'map_center_lat', 'map_center_lng', 'map_zoom', 'boundary_geojson',
     ];
 

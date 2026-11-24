@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Concerns\LogsActivity;
 use App\Models\Concerns\DeletesImages;
 use App\Services\ImageService;
 use Illuminate\Database\Eloquent\Builder;
@@ -12,7 +13,7 @@ use Illuminate\Support\Str;
 
 class Activity extends Model
 {
-    use DeletesImages;
+    use DeletesImages, LogsActivity;
 
     public array $imageColumns = ['cover_image'];
 

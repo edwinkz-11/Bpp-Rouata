@@ -2,13 +2,14 @@
 
 namespace App\Models;
 
+use App\Models\Concerns\LogsActivity;
 use App\Models\Concerns\DeletesImages;
 use App\Services\ImageService;
 use Illuminate\Database\Eloquent\Model;
 
 class ExtensionWorker extends Model
 {
-    use DeletesImages;
+    use DeletesImages, LogsActivity;
 
     public array $imageColumns = ['photo'];
 

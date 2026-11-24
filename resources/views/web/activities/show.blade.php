@@ -2,6 +2,10 @@
 
 @section('title', $activity->title)
 @section('description', \Illuminate\Support\Str::limit(strip_tags((string) $activity->description), 150))
+@section('og_type', 'article')
+@if ($activity->has_image)
+    @section('og_image', $activity->cover_url)
+@endif
 
 @section('content')
 @include('partials.page-header', ['title' => $activity->title, 'parent' => ['Kegiatan Pertanian', route('activities.index')]])

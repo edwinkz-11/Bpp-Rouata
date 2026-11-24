@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('code') | BPP Pertanian Routa</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="{{ asset('vendor/poppins/poppins.css') }}" rel="stylesheet">
     <style>
         body { margin: 0; min-height: 100vh; display: grid; place-items: center; font-family: 'Poppins', system-ui, sans-serif; background: #F8FAF0; color: #1f2937; text-align: center; padding: 1rem; }
         .box { max-width: 460px; }

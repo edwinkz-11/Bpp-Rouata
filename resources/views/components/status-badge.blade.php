@@ -9,6 +9,9 @@
         'inactive' => ['secondary', 'Nonaktif'],
         'admin' => ['danger', 'Admin'],
         'editor' => ['info text-dark', 'Editor'],
+        'new' => ['warning text-dark', 'Baru'],
+        'read' => ['secondary', 'Dibaca'],
+        'resolved' => ['success', 'Selesai'],
     ];
     [$class, $label] = $map[$status] ?? ['secondary', $status];
 @endphp
