@@ -59,7 +59,7 @@ class AppServiceProvider extends ServiceProvider
                 // Database belum dimigrasi: pakai nilai bawaan agar halaman tidak error.
                 return $shared = [
                     'bpp' => new Profile([
-                        'name' => 'BPP Pertanian Routa',
+                        'name' => 'BPP Routa',
                         'institution_name' => 'Balai Penyuluhan Pertanian Kecamatan Routa',
                     ]),
                     'site' => [],

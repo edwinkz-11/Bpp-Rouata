@@ -1,8 +1,8 @@
-# Website BPP Pertanian Routa (Laravel)
+# Website BPP Routa (Laravel)
 
 **Cara tercepat:** `./setup.sh` (butuh PHP 8.2+, Composer, MySQL) atau `docker compose up --build` (butuh Docker saja). Keduanya membuat proyek, mengatur .env, migrasi, dan akun admin otomatis.
 
-Sistem informasi pertanian untuk **BPP Pertanian Routa (Balai Penyuluhan Pertanian Kecamatan Routa)**:
+Sistem informasi pertanian untuk **BPP Routa (Balai Penyuluhan Pertanian Kecamatan Routa)**:
 
 1. **Website publik**: Home, Profil Kecamatan, Kegiatan Pertanian (filter, pencarian, pagination, lightbox), Potensi Pertanian, Peta Wilayah (Leaflet + OpenStreetMap), Galeri, Tentang BPP.
 2. **Dashboard admin** (`/admin`): kelola profil, desa, kegiatan, galeri, komoditas, titik peta, jalur, penyuluh, pengaturan website, dan pengguna.
@@ -43,7 +43,7 @@ mysql -u root -p < database/sql/00_create_database.sql
 Salin `.env.example` menjadi `.env`, lalu ubah/tambahkan:
 
 ```dotenv
-APP_NAME="BPP Pertanian Routa"
+APP_NAME="BPP Routa"
 APP_ENV=local
 APP_DEBUG=true            # ubah ke false di server produksi
 APP_URL=http://127.0.0.1:8000

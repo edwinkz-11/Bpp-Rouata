@@ -1,7 +1,7 @@
 @extends('layouts.public')
 
 @section('title', 'Dokumen dan Unduhan')
-@section('description', 'Unduh laporan kinerja, programa penyuluhan, peraturan, formulir, dan dokumen informasi publik BPP Pertanian Routa.')
+@section('description', 'Unduh laporan kinerja, programa penyuluhan, peraturan, formulir, dan dokumen informasi publik BPP Routa.')
 
 @section('content')
 @include('partials.page-header', ['title' => 'Dokumen dan Unduhan', 'subtitle' => 'Laporan, programa penyuluhan, peraturan, formulir, dan dokumen informasi publik.'])

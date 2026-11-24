@@ -1,15 +1,15 @@
 @extends('layouts.public')
 
 @section('title', 'Berita')
-@section('description', 'Berita dan kabar terbaru dari BPP Pertanian Routa serta Kementerian Pertanian.')
+@section('description', 'Berita dan kabar terbaru dari BPP Routa serta Kementerian Pertanian.')
 
 @section('content')
-@include('partials.page-header', ['title' => 'Berita', 'subtitle' => 'Kabar dari BPP Pertanian Routa dan Kementerian Pertanian Republik Indonesia'])
+@include('partials.page-header', ['title' => 'Berita', 'subtitle' => 'Kabar dari BPP Routa dan Kementerian Pertanian Republik Indonesia'])
 
 <section class="section">
     <div class="container">
         <div class="section-label"><i class="bi bi-megaphone"></i> Dari BPP Routa</div>
-        <h2 class="section-title mb-4">Berita BPP Pertanian Routa</h2>
+        <h2 class="section-title mb-4">Berita BPP Routa</h2>
         @if ($posts->isEmpty())
             <x-empty icon="bi-newspaper" title="Belum ada berita" text="Berita dari BPP akan tampil di sini setelah diterbitkan petugas." />
         @else

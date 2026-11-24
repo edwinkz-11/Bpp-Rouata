@@ -1,7 +1,7 @@
 @extends('layouts.public')
 
 @section('title', 'Kebijakan Privasi')
-@section('description', 'Cara BPP Pertanian Routa mengumpulkan, menggunakan, dan melindungi data pengunjung website.')
+@section('description', 'Cara BPP Routa mengumpulkan, menggunakan, dan melindungi data pengunjung website.')
 
 @section('content')
 @include('partials.page-header', ['title' => 'Kebijakan Privasi', 'subtitle' => 'Data apa yang kami kumpulkan dan bagaimana kami menjaganya.'])

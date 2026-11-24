@@ -31,8 +31,7 @@
     <div class="hero-overlay"></div>
     <div class="container position-relative">
         <span class="hero-badge">Selamat Datang di</span>
-        <h1 class="hero-title">BPP PERTANIAN ROUTA</h1>
-        <p class="hero-sub">Balai Penyuluhan Pertanian Kecamatan Routa</p>
+        <h1 class="hero-title">BALAI PENYULUHAN PERTANIAN KECAMATAN ROUTA</h1>
         <p class="hero-slogan">“{{ $site['slogan'] ?? 'Membangun Pertanian Routa yang Maju, Mandiri, dan Berkelanjutan.' }}”</p>
         <a href="#sekilas" class="btn btn-accent btn-lg">Kenali Lebih Lanjut <i class="bi bi-arrow-right ms-1"></i></a>
     </div>

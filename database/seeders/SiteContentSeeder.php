@@ -12,7 +12,7 @@ class SiteContentSeeder extends Seeder
     {
         // Hanya nama & slogan dari brief. Alamat, telepon, email, sejarah, dll. diisi admin.
         Profile::firstOrCreate(['type' => 'bpp'], [
-            'name' => 'BPP Pertanian Routa',
+            'name' => 'BPP Routa',
             'institution_name' => 'Balai Penyuluhan Pertanian Kecamatan Routa',
         ]);
 

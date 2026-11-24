@@ -1,7 +1,7 @@
 @extends('layouts.public')
 
 @section('title', 'Kontak dan Pengaduan')
-@section('description', 'Kirim pertanyaan, saran, pengaduan, atau permohonan informasi kepada BPP Pertanian Routa.')
+@section('description', 'Kirim pertanyaan, saran, pengaduan, atau permohonan informasi kepada BPP Routa.')
 
 @section('content')
 @include('partials.page-header', ['title' => 'Kontak dan Pengaduan', 'subtitle' => 'Sampaikan pertanyaan, saran, pengaduan, atau permohonan informasi.'])

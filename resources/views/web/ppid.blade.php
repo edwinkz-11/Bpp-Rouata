@@ -1,7 +1,7 @@
 @extends('layouts.public')
 
 @section('title', 'PPID')
-@section('description', 'Layanan informasi publik BPP Pertanian Routa: informasi berkala, informasi setiap saat, dan informasi serta merta.')
+@section('description', 'Layanan informasi publik BPP Routa: informasi berkala, informasi setiap saat, dan informasi serta merta.')
 
 @section('content')
 @include('partials.page-header', ['title' => 'PPID', 'subtitle' => 'Pejabat Pengelola Informasi dan Dokumentasi: layanan keterbukaan informasi publik.'])

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Menempelkan kode BPP Pertanian Routa ke proyek Laravel baru.
+# Menempelkan kode BPP Routa ke proyek Laravel baru.
 # Pemakaian: ./install.sh /path/ke/proyek-laravel
 set -euo pipefail
 

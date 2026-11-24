@@ -15,7 +15,7 @@ for d in app database lang public resources routes; do
 done
 
 cat > .env <<EOF
-APP_NAME="BPP Pertanian Routa"
+APP_NAME="BPP Routa"
 APP_ENV=local
 APP_KEY=
 APP_DEBUG=true

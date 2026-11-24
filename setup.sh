@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Setup otomatis BPP Pertanian Routa: membuat proyek Laravel, menempelkan kode,
+# Setup otomatis BPP Routa: membuat proyek Laravel, menempelkan kode,
 # mengatur .env, membuat database, migrasi + seed, storage:link.
 #
 # Pemakaian:  ./setup.sh [nama-folder]        (bawaan: bpp-routa)
@@ -51,7 +51,7 @@ setenv() {
 }
 
 echo ">> 3/6 Mengatur .env"
-setenv APP_NAME "BPP Pertanian Routa"
+setenv APP_NAME "BPP Routa"
 setenv APP_URL "$APP_URL"
 setenv APP_LOCALE "id"
 setenv APP_FALLBACK_LOCALE "en"

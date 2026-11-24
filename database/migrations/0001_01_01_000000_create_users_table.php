@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 /**
  * Menggantikan migrasi bawaan Laravel (users, password_reset_tokens, sessions)
- * agar sesuai skema BPP Pertanian Routa (kolom role: admin/editor).
+ * agar sesuai skema BPP Routa (kolom role: admin/editor).
  */
 return new class extends Migration
 {
